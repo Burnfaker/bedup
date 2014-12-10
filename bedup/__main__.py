@@ -97,7 +97,7 @@ def get_session(args):
         args.db_path = os.path.join(data_dir, 'db.sqlite')
     url = sqlalchemy.engine.url.URL('sqlite', database=args.db_path)
     engine = sqlalchemy.engine.create_engine(
-        url, echo=args.verbose_sql, poolclass=SingletonThreadPool)
+        url, echo=args.verbose_sql, connect_args={'check_same_thread':False}, poolclass=SingletonThreadPool)
     sqlalchemy.event.listen(engine, 'connect', sql_setup)
     upgrade_schema(engine)
     Session = sessionmaker(bind=engine)
