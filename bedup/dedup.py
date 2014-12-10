@@ -147,7 +147,8 @@ def find_inodes_in_use(fds):
                 # glob opens directories during matching,
                 # and other processes might close their fds in the meantime.
                 # This isn't a problem for the immutable-locked use case.
-                if e.errno == errno.ENOENT:
+                # Or stale NFS file handles (fixes running with open docker images).
+                if e.errno in [errno.ENOENT, 116]:
                     continue
                 raise
 
