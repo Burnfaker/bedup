@@ -186,6 +186,6 @@ And give some of the program output.
 Build status
 ============
 
-.. image:: https://travis-ci.org/g2p/bedup.png
-   :target: https://travis-ci.org/g2p/bedup
+.. image:: https://travis-ci.org/Burnfaker/bedup.svg
+   :target: https://travis-ci.org/Burnfaker/bedup
 
