@@ -18,7 +18,7 @@ install:
 #- chmod +x linux.uml
 #- git clone https://github.com/g2p/vido.git
 #- export GETROOT="$PWD/vido/vido --kernel=./linux.uml --"
-
+- export GETROOT=/usr/bin/sudo tox
 # tox has some advantages over travis runners:
 # it tests installation from the sdist, which will
 # report things like missing header files.
