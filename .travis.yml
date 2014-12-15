@@ -26,5 +26,5 @@ install:
 script:
 # Travis has PyPy 1.9 which is too old (want a PPA to upgrade).
 - time tox -e pypy || echo "Ignoring PyPy failures on Travis"
-- time tox -e py3.4,py33,py27,py32
+- time tox -e py34,py33,py27,py32
 
